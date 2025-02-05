@@ -1,0 +1,26 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "oxygen"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  # logo = "img/logo.jpg"
+  # secondaryLogo = "img/logo.png"
+  description = "oxygen28 blog"
+  copyright = "&copy; 2025 [oxygen](https://x.com/greybiu)"
+
+[params.author]
+  name = "oxygen"
+  image = "img/logo.jpg"
+  imageQuality = 96
+  headline = "Blue Teamer & DFIR Enthusiast"
+  links = [
+     { github = "https://github.com/oxygen28" },
+     { linkedin = "https://www.linkedin.com/in/gabriel-kuek/" },
+     { x-twitter = "https://x.com/greybiu" },
+   ]
