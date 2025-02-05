@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oxygen28.gitbook.io/sitemap.xml
