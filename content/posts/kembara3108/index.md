@@ -5,6 +5,7 @@ draft: false
 description: Wargames CTF writeup
 summary: "This is a CTF writeup for Kembara Tuah 3108 CTF."
 tags: ["ctf"]
+categories: ["ctf"]
 ---
 
 ## Crypto
@@ -16,7 +17,7 @@ tags: ["ctf"]
 Flag: `3108{substitute_cipher_text}`
 
 For this challenge, we are given a python script.
-##### secretMessenger.py
+**secretMessenger.py**
 ```python
 a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z='j','b','a','c','m','n','i','p','o','q','r','t','x','z','v','s','u','y','h','g','d','e','f','k','l','w'
 flag=((3108,"{",p,q,b,p,l,g,l,q,l,v,"_",d,g,h,s,v,k,"_",l,v,m,l,"}")[::-1])
@@ -25,7 +26,7 @@ flag=((3108,"{",p,q,b,p,l,g,l,q,l,v,"_",d,g,h,s,v,k,"_",l,v,m,l,"}")[::-1])
 From the script we can see there's the flag variable set to the predefined variables in reverse.
 
 Then what we can do is remove the slice notation and join the flag  and print it out. 
-##### Solution.py
+**Solution.py**
 ```python
 a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z='j','b','a','c','m','n','i','p','o','q','r','t','x','z','v','s','u','y','h','g','d','e','f','k','l','w'
 flag="".join(str(i) for i in (3108,"{",p,q,b,p,l,g,l,q,l,v,"_",d,g,h,s,v,k,"_",l,v,m,l,"}"))
@@ -47,12 +48,12 @@ print(flag)
 Flag: `3108{GAMBUS_BUDAYA_LAMA}`
 
 For this challenge, we are given a cipher text and a key.
-##### Cipher Text
-```
+**Cipher Text**
+```plaintext
 }AYPF_KYMSOL_TOMMNG{8013EJVWASCUQOYOAGNURBETMYUIBMTNHGMALKGZTXUBDPS
 ```
-##### Key
-```
+**Key**
+```plaintext
 AMPUKAMPUKBULAN
 ```
 
@@ -68,7 +69,7 @@ Given the cipher text and key, using [CyberChef](https://gchq.github.io/CyberChe
 Flag: `3108{S1MPL3_CRPYT0_CHALLENGE}`
 
 For this challenge we are given a python script.
-##### cryptochalle.py
+**cryptochalle.py**
 ```python
 def xor_with_binary(binary_str, xor_str):
     binaries = binary_str.split()
@@ -100,12 +101,12 @@ Flag: `3108{700ef4a79959615b67ea5297e725c06e}`
 We were asked who the name of the Laksamana that killed Sultan Mahmud in 1699 and quick google search says that its *Laksamana Bentan* and submitting the answer shows the hex string.
 ![](https://i.imgur.com/yVhpu3A.png)
 
-##### Hex string
+**Hex string**
 ```
 0x33z0x31z0x30z0x380x7bz0x37z0x30z0x30z0x650x66z0x34z0x61z0x37z0x39z0x39z0x350x39z0x360x31z0x350x62z0x360x37z0x650x61z0x35z0x32z0x39z0x37z0x65z0x37z0x32z0x350x63z0x300x36z0x65z0x7dz
 ```
 
-Using [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')&input=MHgzM3oweDMxejB4MzB6MHgzODB4N2J6MHgzN3oweDMwejB4MzB6MHg2NTB4NjZ6MHgzNHoweDYxejB4Mzd6MHgzOXoweDM5ejB4MzUweDM5ejB4MzYweDMxejB4MzUweDYyejB4MzYweDM3ejB4NjUweDYxejB4MzV6MHgzMnoweDM5ejB4Mzd6MHg2NXoweDM3ejB4MzJ6MHgzNTB4NjN6MHgzMDB4MzZ6MHg2NXoweDdkeg&oeol=FF)to convert the hex will show us the flag
+Using [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')&input=MHgzM3oweDMxejB4MzB6MHgzODB4N2J6MHgzN3oweDMwejB4MzB6MHg2NTB4NjZ6MHgzNHoweDYxejB4Mzd6MHgzOXoweDM5ejB4MzUweDM5ejB4MzYweDMxejB4MzUweDYyejB4MzYweDM3ejB4NjUweDYxejB4MzV6MHgzMnoweDM5ejB4Mzd6MHg2NXoweDM3ejB4MzJ6MHgzNTB4NjN6MHgzMDB4MzZ6MHg2NXoweDdkeg&oeol=FF) to convert the hex will show us the flag
 ![](https://i.imgur.com/UXXesvp.png)
 
 ---
@@ -126,7 +127,7 @@ Then I proceed to unzip the zip file and obtained 3 jpg file.
 
 ![](https://i.imgur.com/Xv3Hhlt.png)
 
-These images does not show anything, so I tried to use [Stegoveritas](https://github.com/bannsec/stegoVeritas)to extract the *3.jpg* because it feels weird to have AI generated image to mix with the rest normal looking images. Also the file size seems to be larger than the rest that might indicate something is hidden within the image itself.
+These images does not show anything, so I tried to use [Stegoveritas](https://github.com/bannsec/stegoVeritas) to extract the *3.jpg* because it feels weird to have AI generated image to mix with the rest normal looking images. Also the file size seems to be larger than the rest that might indicate something is hidden within the image itself.
 
 ![](https://i.imgur.com/x1j2f7E.png)
 
@@ -185,7 +186,7 @@ Without any hint given,  I tried to brute-force the password using JohnTheRipper
 
 ![](https://i.imgur.com/Rc6u1A5.png)
 
-There's the flag at the bottom, but is it the real flag? Seems like gibberish to me, hence I notice the *JamalulKiramIII* that was bolded and thought that it might be used to decode the flag. So I go over to trusty [CyberChef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('JamalulKiramIII')&input=MzEwOHswWTNSNEUxX0Q0RkY0RX0)and used the Vigenère module to decode the flag.
+There's the flag at the bottom, but is it the real flag? Seems like gibberish to me, hence I notice the *JamalulKiramIII* that was bolded and thought that it might be used to decode the flag. So I go over to trusty [CyberChef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('JamalulKiramIII')&input=MzEwOHswWTNSNEUxX0Q0RkY0RX0) and used the Vigenère module to decode the flag.
 ![](https://i.imgur.com/Lh5U7XS.png)
 
 ---
@@ -260,7 +261,7 @@ The function that we should put our focus on is this *check_flag* function.
 ![](https://i.imgur.com/mAS3f5W.png)
 
 Basically the each character from `s2` will be XORed with each character from `s`. With that I used ChatGPT to help me craft the script to decode the flag.
-##### Solution.py
+**Solution.py**
 ```python
 s = "namaasalsabah"
 s2 = "5d505d591a20552e47293d325c3e3159291c"
@@ -383,7 +384,7 @@ Flag: `3108{n0mb0r_k3r4mat}`
 We are given an ELF file to reverse and NetCat connection to get the actual flag.
 ![](https://i.imgur.com/FTdhG57.png)
 
-Using [DogBolt](https://dogbolt.org/?id=1e45d5b6-d3ee-4bf3-ab36-d037be422064#Hex-Rays=272&BinaryNinja=240)we can look at the decompiled code. At which we would put our attention to the function `addtwonumber` which will accept two values where
+Using [DogBolt](https://dogbolt.org/?id=1e45d5b6-d3ee-4bf3-ab36-d037be422064#Hex-Rays=272&BinaryNinja=240) we can look at the decompiled code. At which we would put our attention to the function `addtwonumber` which will accept two values where
 `v9` = first value
 `v10` = second value
 
@@ -414,7 +415,7 @@ With that we can reach *merdeka* function which will reveal the flag.
 
 Flag: `3108{Kuch1ng_1bu_N3g3r1_S4r4w4k}`
 
-We are given a Word Document, using [oleid](https://github.com/decalage2/oletools/wiki/oleid)it can be seen that the document contains VBA macros
+We are given a Word Document, using [oleid](https://github.com/decalage2/oletools/wiki/oleid) it can be seen that the document contains VBA macros
 ![](https://i.imgur.com/ZDUpAGV.png)
 
 With that I used [olevba](https://github.com/decalage2/oletools/wiki/olevba) to read the VBA code, and found a Base64 hash
@@ -423,7 +424,7 @@ With that I used [olevba](https://github.com/decalage2/oletools/wiki/olevba) to 
 As always I will use the trusty [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)Remove_null_bytes()&input=TXdBeEFEQUFPQUI3QUVzQWRRQmpBR2dBTVFCdUFHY0FYd0F4QUdJQWRRQmZBRTRBTXdCbkFETUFjZ0F4QUY4QVV3QTBBSElBTkFCM0FEUUFhd0I5QUE9PQ) to decode the Base64 and obtained the flag.
 ![](https://i.imgur.com/hc4crqg.png)
 
-This [article](https://intezer.com/blog/malware-analysis/analyze-malicious-microsoft-office-files/)from Intezer explains in detail how to analyze Microsoft Office files.
+This [article](https://intezer.com/blog/malware-analysis/analyze-malicious-microsoft-office-files/) from Intezer explains in detail how to analyze Microsoft Office files.
 
 ---
 

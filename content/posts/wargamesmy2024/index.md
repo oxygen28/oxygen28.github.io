@@ -5,6 +5,7 @@ draft: false
 description: Wargames CTF writeup
 summary: "This is a CTF writeup for Wargames.MY 2024, it is a prestigous local CTF that I look forward every year."
 tags: ["ctf"]
+categories: ["ctf"]
 ---
 
 ## Crypto
@@ -18,11 +19,11 @@ tags: ["ctf"]
 Flag: `WGMY{b6d180d9c302d8a8daad1f2174a0b212}`
 
 For this challenge there are 2 files provided `passwd.txt` and `user.txt`.
-##### user.txt
+**user.txt**
 ```text
 osman
 ```
-##### passwd.txt
+**passwd.txt**
 ```text
 ZJPB{e6g180g9f302g8d8gddg1i2174d0e212}
 ```
@@ -96,7 +97,10 @@ From the _Session Setup Request, NTLMSSP_AUTH_ packet, we can extract the follow
 
 Next, we extract the **NTProofStr** and the remaining **NTLM Response Data**:
 - **NTProofStr**: `ae62a57caaa5dd94b68def8fb1c192f3`
-- **Remaining NTLM Response Data**: `01010000000000008675779b2e57db01376f686e57504d770000000002001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0001001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0004001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0003001e004400450053004b0054004f0050002d0050004d004e00550030004a004b00070008008675779b2e57db010900280063006900660073002f004400450053004b0054004f0050002d0050004d004e00550030004a004b000000000000000000`
+- **Remaining NTLM Response Data**: 
+```
+01010000000000008675779b2e57db01376f686e57504d770000000002001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0001001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0004001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0003001e004400450053004b0054004f0050002d0050004d004e00550030004a004b00070008008675779b2e57db010900280063006900660073002f004400450053004b0054004f0050002d0050004d004e00550030004a004b000000000000000000
+```
 
 ![](https://i.imgur.com/kuT6B27.png)
 
@@ -112,8 +116,10 @@ From the _Session Setup Response, NTLMSSP_CHALLENGE_ packet, we obtain the **NTL
 
 #### 2. Crack the Password Using the NTLM Data
 Now that we have all the required data, we can construct the hash to crack the password using HashCat. The format is:
-`Username::Domain:NTLMServerChallenge:NTProofStr:RemainingNTLMResponseData`
-##### Hash
+```
+Username::Domain:NTLMServerChallenge:NTProofStr:RemainingNTLMResponseData
+```
+**Hash**
 ```
 Administrator::DESKTOP-PMNU0JK:7aaff6ea26301fc3:ae62a57caaa5dd94b68def8fb1c192f3:01010000000000008675779b2e57db01376f686e57504d770000000002001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0001001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0004001e004400450053004b0054004f0050002d0050004d004e00550030004a004b0003001e004400450053004b0054004f0050002d0050004d004e00550030004a004b00070008008675779b2e57db010900280063006900660073002f004400450053004b0054004f0050002d0050004d004e00550030004a004b000000000000000000
 ```
@@ -124,7 +130,7 @@ Once the hash is constructed, you can use HashCat to crack the password. The cra
 
 #### 3. Obtain the Random Session Key
 With the data obtained from the packet and the cracked password, we can calculate the random session key using the following Python script:
-##### Get Random Session Key.py
+**Get Random Session Key.py**
 ```python
 import hashlib
 import hmac
@@ -203,12 +209,12 @@ Once decrypted, we can extract the files using:
 ![](https://i.imgur.com/IbkE8cP.png)
 
 #### 6. Analyze the Extracted Files
-##### wqpiZo
+**wqpiZo**
 ```
 "lsass.exe","840","Services","0","24,332 K","Unknown","NT AUTHORITY\SYSTEM","0:00:00","N/A"
 ```
 
-##### RxHmEj
+**RxHmEj**
 ```
 The minidump has an invalid signature, restore it running:
 scripts/restore_signature 20241225_1939.log
@@ -218,11 +224,10 @@ python3 -m pypykatz lsa minidump 20241225_1939.log
 python3 -m pypykatz lsa minidump 20241225_1939.log
 ```
 
-##### 20241225_1939.log
-
+**20241225_1939.log**
 ![](https://i.imgur.com/5E99tbB.png)
 
-##### nano.exe
+**nano.exe**
 This is identified as `nanodump.exe` from [VirusTotal Scan](https://www.virustotal.com/gui/file/bc21f289cc113a77ca1f48900a321d8f0eff024634a9255becc8afda66c213bd/details), which can be found on [GitHub](https://github.com/fortra/nanodump).
 
 Now we know that the `20241225_1939.log` can be used to get the minidump, then the next step is to restore the log file as the signature seems to be invalid MiniDump log file.
@@ -293,7 +298,7 @@ I used [CyberChef](https://cyberchef.org/#recipe=Regular_expression('User%20defi
 Next, to obtain the actual flag, we use the indices provided in the challenge description: `[25, 10, 0, 3, 17, 19, 23, 27, 4, 13, 20, 8, 24, 21, 31, 15, 7, 29, 6, 1, 9, 30, 22, 5, 28, 18, 26, 11, 2, 14, 16, 12]`
 
 By following these indices, we can rearrange the characters in the extracted string. To automate this process, I create a Python script:
-##### flag.py
+**flag.py**
 ```python
 element = "f63acd3b78127c1d7d3e700b55665354"
 indices = [25, 10, 0, 3, 17, 19, 23, 27, 4, 13, 20, 8, 24, 21, 31, 15, 7, 29, 6, 1, 9, 30, 22, 5, 28, 18, 26, 11, 2, 14, 16, 12]

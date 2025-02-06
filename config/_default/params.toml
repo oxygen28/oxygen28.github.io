@@ -67,7 +67,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
-  # editURL = "https://github.com/username/repo/"
+  editURL = "https://github.com/oxygen28/oxygen28.github.io/tree/main/content/"
   editAppendPath = true
   seriesOpened = false
   showHeadingAnchors = true
@@ -80,7 +80,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   showTaxonomies = false
   showAuthorsBadges = false
   showWordCount = true
-  # sharingLinks = [ "linkedin", "twitter", "bluesky", "mastodon", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
+  sharingLinks = [ "linkedin", "twitter", "mastodon", "reddit", "email", "whatsapp", "telegram"]
   showZenMode = true
 
 [list]

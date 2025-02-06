@@ -5,6 +5,7 @@ draft: false
 description: Cyber Apocalypse 2024 writeup
 summary: This is a CTF writeup for Cyber Apocalypse 2024.
 tags: ["ctf"]
+categories: ["ctf"]
 ---
 
 ## Crypto
@@ -16,12 +17,12 @@ tags: ["ctf"]
 Flag: `HTB{DID_YOU_KNOW_ABOUT_THE_TRITHEMIUS_CIPHER?!_IT_IS_SIMILAR_TO_CAESAR_CIPHER}`
 
 For this challenge, there are 2 files. The output file and also the source code.
-##### Output.txt
+**Output.txt**
 ```txt
 Make sure you wrap the decrypted text with the HTB flag format :-]
 DJF_CTA_SWYH_NPDKK_MBZ_QPHTIGPMZY_KRZSQE?!_ZL_CN_PGLIMCU_YU_KJODME_RYGZXL
 ```
-##### Source.py
+**Source.py**
 ```python
 from secret import FLAG
 from random import randint
@@ -58,7 +59,7 @@ This is a simple algorithm to encrypt the data. Here's how it works:
 4. Return the value Crypt.
 
 The solution is very simple, just by reversing the steps used to encrypt the flag and the flag can be obtained.
-##### Solution.py
+**Solution.py**
 ```python
 #from secret import FLAG
 #from random import randint
@@ -113,12 +114,12 @@ print("HTB{".decrypt(flag)."}")
 Flag: `HTB{th1s_1s_th3_t1ny_3ncryp710n_4lg0r1thm_y0u_m1ght_h4v3_4lr34dy_s7umbl3d_up0n_1t_1f_y0u_d0_r3v3rs1ng}`
 
 Given 2 file, one output and one source as shown below. 
-##### Output.txt
+**Output.txt**
 ```
 Key : 850c1413787c389e0b34437a6828a1b2
 Ciphertext : b36c62d96d9daaa90634242e1e6c76556d020de35f7a3b248ed71351cc3f3da97d4d8fd0ebc5c06a655eb57f2b250dcb2b39c8b2000297f635ce4a44110ec66596c50624d6ab582b2fd92228a21ad9eece4729e589aba644393f57736a0b870308ff00d778214f238056b8cf5721a843
 ```
-##### Source.py
+**Source.py**
 ```python
 import os
 from secret import FLAG
@@ -285,11 +286,11 @@ print("Decrypted plaintext:", pt.decode())
 Flag: `HTB{4_b3tTeR_w3apOn_i5_n3edeD!?!}`
 
 For this challenge we are given an output file and a source file as below.
-##### Output.txt
+**Output.txt**
 ```
 !?}De!e3d_5n_nipaOw_3eTR3bt4{_THB
 ```
-##### Source.py
+**Source.py**
 ```python
 from secret import FLAG
 
@@ -341,14 +342,14 @@ print(old_flag[::-1])
 Flag: `HTB{0h_d4mn_4ny7h1ng_r41s3d_t0_0_1s_1!!!}`
 
 We are given 2 file, one output.txt and one source.py as follow:
-##### Output.txt
+**Output.txt**
 ```
 n = 144595784022187052238125262458232959109987136704231245881870735843030914418780422519197073054193003090872912033596512666042758783502695953159051463566278382720140120749528617388336646147072604310690631290350467553484062369903150007357049541933018919332888376075574412714397536728967816658337874664379646535347
 e = 65537
 c = 15114190905253542247495696649766224943647565245575793033722173362381895081574269185793855569028304967185492350704248662115269163914175084627211079781200695659317523835901228170250632843476020488370822347715086086989906717932813405479321939826364601353394090531331666739056025477042690259429336665430591623215
 ```
 
-##### Source.py
+**Source.py**
 ```python
 import math
 from Crypto.Util.number import getPrime, bytes_to_long
@@ -368,7 +369,7 @@ with open('output.txt', 'w') as f:
 
 I noticed that the source code reassemble RSA encryption algorithm. The output provided the value of n, e and c. The value of n seems to be single value of prime number with the for loop (multiplied to 0). Hence I wrote the code to decrypt the value of the flag as below.
 
-##### Solution.py
+**Solution.py**
 ```python
 from Crypto.Util.number import inverse, long_to_bytes
 
@@ -423,7 +424,7 @@ Other than that, I also found out that the EML file is an ASCII text file and I 
 
 ![](https://i.imgur.com/J3sPuCw.png)
 
-I proceed to use [CyberChef](https://gchq.github.io/CyberChef/)to decode the Base64 data, and I obtained the same value as when I view the page source of the HTML file.
+I proceed to use [CyberChef](https://gchq.github.io/CyberChef/) to decode the Base64 data, and I obtained the same value as when I view the page source of the HTML file.
 ![](https://i.imgur.com/wDZqjns.png)
 
 ---
