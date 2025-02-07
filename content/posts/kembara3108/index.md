@@ -1,9 +1,9 @@
 ---
-title: Kembara Tuah 3108 - Writeup
+title: Kembara Tuah 3108 - Writeups
 date: 2024-09-02
 draft: false
-description: Wargames CTF writeup
-summary: "This is a CTF writeup for Kembara Tuah 3108 CTF."
+description: "This page contains writeups for the Kembara Tuah 3108 CTF, covering various challenges across categories like Crypto, Forensic, Linux, Reverse Engineering, and Web. Each challenge involves solving puzzles, decoding messages, analyzing files, and exploiting vulnerabilities to uncover flags."
+summary: "This page provides writeups for Kembara Tuah 3108 CTF challenges, covering Crypto, Forensic, Linux, Reverse Engineering, and Web tasks, with solutions involving decryption, steganography, brute-forcing, and exploiting vulnerabilities to retrieve flags."
 tags: ["ctf"]
 categories: ["ctf"]
 ---

@@ -1,9 +1,9 @@
 ---
-title: Wargames.MY 2024 - Writeup
+title: Wargames.MY 2024 - Writeups
 date: 2024-12-29
 draft: false
-description: Wargames CTF writeup
-summary: "This is a CTF writeup for Wargames.MY 2024, it is a prestigous local CTF that I look forward every year."
+description: "This page contains writeups for the Wargames.MY 2024 CTF, covering challenges across categories like Crypto, Forensic, and Misc. The challenges involve solving puzzles such as decrypting ROT13-encoded passwords, analyzing PCAP files to extract hidden messages, decrypting SMB traffic to uncover stolen data, repairing corrupted JPEG images, and rearranging metadata from a .dcm file to form a flag."
+summary: "This page contains writeups for Wargames.MY 2024 CTF, covering challenges in Crypto, Forensic, and Misc categories. Solutions involve decrypting ROT13-encoded passwords, extracting flags from ICMP packets, decrypting SMB traffic using NTLM hashes, repairing corrupted JPEG images, and rearranging metadata from a .dcm file based on given indices. Each solution uses tools like CyberChef, Wireshark, Hashcat, and Python scripts."
 tags: ["ctf"]
 categories: ["ctf"]
 ---

@@ -1,9 +1,9 @@
 ---
-title: Cyber Apocalypse 2024 - Writeup
+title: Cyber Apocalypse 2024 - Writeups
 date: 2024-03-13
 draft: false
-description: Cyber Apocalypse 2024 writeup
-summary: This is a CTF writeup for Cyber Apocalypse 2024.
+description: "This page contains writeups for various challenges from the Cyber Apocalypse 2024 CTF. The challenges span multiple categories, including Crypto, Forensic, Hardware, Misc, and Rev. Each challenge involves solving a unique problem using techniques such as cryptography, network analysis, file system exploration, scripting, and reverse engineering."
+summary: "This page contains Cyber Apocalypse 2024 CTF writeups, covering challenges in Crypto, Forensic, Hardware, Misc, and Rev."
 tags: ["ctf"]
 categories: ["ctf"]
 ---

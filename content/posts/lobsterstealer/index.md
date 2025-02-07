@@ -2,8 +2,8 @@
 title: Lobster Stealer - Malware Analysis
 date: 2025-02-06
 draft: false
-description: Malware analysis of a CTF version AMOS stealer posted on DFIR LABS Github
-summary: Malware analysis of the CTF version AMOS stealer
+description: "This page provides a detailed malware analysis of the CTF version AMOS stealer, posted on DFIR LABS' GitHub. The analysis focuses on reverse-engineering and decrypting data from malicious files extracted from a PCAP file, including an OSX keychain stealer and encrypted flag decryption using RC4 and AES-128-CBC algorithms."
+summary: "The writeup analyzes Lobster Stealer, a macOS malware that steals sensitive data like passwords, browser history, and cryptocurrency wallet info. It uses RC4 for command obfuscation and AES-128-CBC for encrypting flag. The challenge involves decrypting the flag by analyzing the malicious OSA script and extracting encryption keys from a PNG file."
 tags: ["malware analysis","DFIR Labs"]
 categories: ["malware analysis"]
 ---
