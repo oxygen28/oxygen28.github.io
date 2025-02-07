@@ -6,6 +6,7 @@ showDate: false
 showWordCount: false
 showTableOfContents: false
 showRelatedContent: false
+sharingLinks: false
 ---
 
 ## About Me
