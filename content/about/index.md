@@ -17,4 +17,4 @@ I'm a lifelong learner, always eager to expand my knowledge and sharpen my skill
 ## Find me here
 [Twitter (X)](https://x.com/greybiu)
 
-Discord - oxygen28
+[Discord - oxygen28](https://discord.gg/FzwksM3x)
