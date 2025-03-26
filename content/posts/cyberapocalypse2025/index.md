@@ -584,7 +584,7 @@ Flags:
    nnjofihdjilebhiiemfmdlpbdkbjcpae
    
 4. After examining the malicious extention's code, what is the log filename in which the data is stored
-   000003.log
+   
    
 5. What is the URL the user navigated to
    drive.google.com
@@ -1130,6 +1130,22 @@ Using [matkap](https://github.com/0x6rss/matkap) to extract messages:
 ```
 === Captured Messages ===
 
+
+--- Message ID: 3 ---
+Date: 1742658154
+Text: Interesting. Their reliance on Brave works in our favor. Send over the tool and a brief summary of its capabilities.
+----------------------------------------
+
+--- Message ID: 2 ---
+Date: 1742658154
+Text: Operation Eldoria is progressing as planned. The dissidents are becoming too confident, thinking they are untouchable behind "secure" tools. As protestors, they have flocked to Brave because it's open source, but that might cost them their privacy.
+----------------------------------------
+
+--- Message ID: 4 ---
+Date: 1742658155
+Text: Oh! We should not forget to send the invitation link for this channel to the website so the rest of the parties can join. Coordination is key, and they’ll need access to our updates and tools like Brave.
+----------------------------------------
+
 --- Message ID: 5 ---
 Date: 1742658155
 Text: https://t.me/+_eYUKZwn-p45OGNk
@@ -1140,11 +1156,37 @@ Date: 1742658155
 File ID: BQACAgQAAyEFAASUxwo2AAMGZ93ttKcc24vGEJPqqIstCeH-0rgAAs4YAALNMcBT0DBTt6JgX1k2BA
 ----------------------------------------
 
+--- Message ID: 7 ---
+Date: 1742658156
+Text: This is the tool. Details:
+
+- Targets only Brave Browser users.
+- Exfiltrates the browser's local storage.
+- Operates silently and deletes traces upon execution.
+----------------------------------------
+
+--- Message ID: 8 ---
+Date: 1742658156
+Text: Please send over the archive password.
+----------------------------------------
+
 --- Message ID: 9 ---
 Date: 1742658157
 Text: Oh, yes! It is dr4g0nsh34rtb3l0ngst0m4l4k4r
 ----------------------------------------
+
+--- Message ID: 10 ---
+Date: 1742658157
+Text: I finished reviewing it. Looks promising! I will let my contacts know so they start distributing it. Let the operation begin!
+----------------------------------------
+
+--- Message ID: 11 ---
+Date: 1742658157
+Text: For Lord Malakar! ⚔
+----------------------------------------
 ```
+
+![](https://i.imgur.com/iJ17BjN.png)
 
 #### Malware Analysis (Brave.zip)
 - Password: `dr4g0nsh34rtb3l0ngst0m4l4k4r`
