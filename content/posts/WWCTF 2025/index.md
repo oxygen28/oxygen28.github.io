@@ -309,4 +309,4 @@ Decoding the base64 will show the flag.
 ![](https://i.imgur.com/mKJg7YQ.png)
 
 
-Learned a lot form this challenge especially the dumping of shellcode part.
+Learned a lot from this challenge especially the dumping of shellcode part.
